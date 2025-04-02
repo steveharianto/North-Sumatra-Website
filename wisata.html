@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wisata Lainnya - Sumatera Utara</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        body {
+            background-color: #fff;
+            color: #333;
+        }
+        
+        /* Override header styles for visibility */
+        header {
+            background-color: #222 !important;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+        }
+        
+        .content-container {
+            max-width: 1140px;
+            margin: 40px auto;
+            padding: 0 20px;
+        }
+
+        .hero-image {
+            width: 100%;
+            height: 500px;
+            object-fit: cover;
+            border-radius: 10px;
+            margin-bottom: 30px;
+        }
+
+        .title {
+            font-size: 2.5em;
+            font-weight: bold;
+            margin-bottom: 10px;
+            color: #14aa52;
+        }
+
+        .subtitle {
+            font-size: 1.8em;
+            font-weight: bold;
+            margin-bottom: 20px;
+            color: #222;
+        }
+
+        .description {
+            font-size: 1.2em;
+            line-height: 1.6;
+            margin-bottom: 30px;
+            color: #333;
+        }
+
+        .destination-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 30px;
+            margin: 40px 0;
+        }
+        
+        .destination-card {
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        .destination-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+        }
+        
+        .destination-card .image {
+            height: 200px;
+            background-color: #f5f5f5;
+            background-position: center;
+            background-size: cover;
+        }
+        
+        .destination-card .content {
+            padding: 20px;
+        }
+        
+        .destination-card h3 {
+            color: #14aa52;
+            margin-top: 0;
+            margin-bottom: 10px;
+            font-size: 1.4em;
+        }
+        
+        .destination-card p {
+            margin: 0;
+            line-height: 1.5;
+        }
+        
+        .destination-card .tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-top: 15px;
+        }
+        
+        .destination-card .tag {
+            background-color: #e8f7ee;
+            color: #14aa52;
+            font-size: 0.8em;
+            padding: 5px 10px;
+            border-radius: 20px;
+        }
+        
+        .map-section {
+            background-color: #f5f5f5;
+            padding: 30px;
+            border-radius: 10px;
+            margin: 40px 0;
+        }
+        
+        .map-section h3 {
+            color: #14aa52;
+            text-align: center;
+            margin-top: 0;
+            margin-bottom: 20px;
+            font-size: 1.5em;
+        }
+        
+        .travel-tips {
+            background-color: #fff8e6;
+            border-left: 5px solid #ffc107;
+            padding: 20px 25px;
+            margin: 30px 0;
+        }
+        
+        .travel-tips h3 {
+            color: #b38c30;
+            margin-top: 0;
+            margin-bottom: 15px;
+            font-size: 1.4em;
+        }
+        
+        .travel-tips ul {
+            margin: 0;
+            padding-left: 20px;
+        }
+        
+        .travel-tips li {
+            margin-bottom: 10px;
+            line-height: 1.5;
+        }
+        
+        .info-section {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+
+        .info-card {
+            background-color: #f5f5f5;
+            padding: 25px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .info-card h3 {
+            color: #14aa52;
+            font-size: 1.5em;
+            margin-top: 0;
+            margin-bottom: 15px;
+        }
+
+        .info-card p {
+            font-size: 1.1em;
+            line-height: 1.5;
+            color: #333;
+        }
+
+        @media screen and (max-width: 768px) {
+            .hero-image {
+                height: 300px;
+            }
+            
+            .destination-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="logo" style="margin-right: 100px;">SUMATERA UTARA</div>
+        <nav>
+            <a href="index.html">Beranda</a>
+            <a href="tentang.html">Tentang</a>
+            <a href="danau-toba.html">Danau Toba</a>
+            <a href="budaya.html">Budaya Batak</a>
+            <a href="kuliner.html">Kuliner</a>
+            <a href="medan.html">Kota Medan</a>
+            <a href="wisata.html" class="active">Wisata Lainnya</a>
+            <a href="festival.html">Festival</a>
+            <a href="galeri.html">Galeri</a>
+            <a href="kontak.html">Kontak</a>
+        </nav>
+    </header>
+
+    <div class="content-container">
+        <img src="./image/img1.jpg" alt="Wisata Alam Sumatera Utara" class="hero-image">
+        
+        <div class="title">WISATA LAINNYA</div>
+        <div class="subtitle">Pesona Tersembunyi Sumatera Utara</div>
+        
+        <div class="description">
+            Selain Danau Toba dan Kota Medan, Sumatera Utara menyimpan banyak destinasi wisata menarik yang menawarkan keindahan alam, kekayaan budaya, dan pengalaman unik. Dari hutan hujan tropis yang menjadi rumah bagi orangutan Sumatera hingga air terjun spektakuler, dari dataran tinggi yang sejuk hingga pantai yang eksotis, Sumatera Utara adalah surga bagi pecinta petualangan dan wisatawan yang mencari pengalaman autentik.
+        </div>
+        
+        <div class="destination-grid">
+            <div class="destination-card">
+                <div class="image" style="background-image: url('./image/img2.jpg');"></div>
+                <div class="content">
+                    <h3>Bukit Lawang</h3>
+                    <p>Pusat rehabilitasi orangutan Sumatera di Taman Nasional Gunung Leuser. Wisatawan dapat melihat orangutan di habitat alaminya, melakukan trekking hutan hujan, menyusuri Sungai Bahorok dengan rafting, atau sekadar menikmati suasana desa yang tenang.</p>
+                    <div class="tags">
+                        <span class="tag">Ekowisata</span>
+                        <span class="tag">Alam</span>
+                        <span class="tag">Petualangan</span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="destination-card">
+                <div class="image" style="background-image: url('./image/img3.jpg');"></div>
+                <div class="content">
+                    <h3>Berastagi</h3>
+                    <p>Kota kecil di dataran tinggi Tanah Karo yang terkenal dengan kebun buah dan sayur serta udara sejuk pegunungan. Wisatawan dapat mengunjungi Gunung Sibayak, pemandian air panas, kebun stroberi, dan pasar buah tradisional.</p>
+                    <div class="tags">
+                        <span class="tag">Pegunungan</span>
+                        <span class="tag">Agrowisata</span>
+                        <span class="tag">Budaya</span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="destination-card">
+                <div class="image" style="background-image: url('./image/img4.jpg');"></div>
+                <div class="content">
+                    <h3>Air Terjun Sipiso-piso</h3>
+                    <p>Air terjun setinggi 120 meter yang terletak di tepi Danau Toba. Pemandangan spektakuler yang ditawarkan mencakup air terjun, lembah, dan Danau Toba. Aksesnya cukup mudah dan terdapat area pengamatan yang nyaman.</p>
+                    <div class="tags">
+                        <span class="tag">Air Terjun</span>
+                        <span class="tag">Pemandangan</span>
+                        <span class="tag">Fotografi</span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="destination-card">
+                <div class="image" style="background-image: url('./image/img1.jpg');"></div>
+                <div class="content">
+                    <h3>Pulau Samosir</h3>
+                    <p>Pulau di tengah Danau Toba yang menjadi pusat kebudayaan Batak. Terdapat banyak desa tradisional, museum, situs makam kuno, dan pemandangan alam yang indah. Tomok dan Tuktuk adalah dua desa wisata populer di pulau ini.</p>
+                    <div class="tags">
+                        <span class="tag">Budaya</span>
+                        <span class="tag">Danau</span>
+                        <span class="tag">Sejarah</span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="destination-card">
+                <div class="image" style="background-image: url('./image/img2.jpg');"></div>
+                <div class="content">
+                    <h3>Tangkahan</h3>
+                    <p>"Surga Tersembunyi" di tepi Taman Nasional Gunung Leuser yang terkenal dengan konservasi gajah. Wisatawan dapat berinteraksi dengan gajah Sumatera, berenang di sungai jernih, menikmati pemandian air panas alami, dan melakukan trekking hutan.</p>
+                    <div class="tags">
+                        <span class="tag">Konservasi</span>
+                        <span class="tag">Ekowisata</span>
+                        <span class="tag">Hutan</span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="destination-card">
+                <div class="image" style="background-image: url('./image/img3.jpg');"></div>
+                <div class="content">
+                    <h3>Pantai Cermin</h3>
+                    <p>Pantai berpasir hitam di Kabupaten Serdang Bedagai yang menjadi tujuan wisata populer bagi penduduk lokal. Terdapat taman rekreasi dengan wahana air dan hidangan laut segar. Pantai ini berjarak sekitar 2 jam berkendara dari Medan.</p>
+                    <div class="tags">
+                        <span class="tag">Pantai</span>
+                        <span class="tag">Rekreasi</span>
+                        <span class="tag">Kuliner</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="travel-tips">
+            <h3>Tips Perjalanan</h3>
+            <ul>
+                <li><strong>Waktu Terbaik:</strong> Kunjungi Sumatera Utara antara Mei hingga September saat cuaca cenderung cerah dan kering.</li>
+                <li><strong>Transportasi:</strong> Sewa mobil atau motor adalah cara terbaik untuk menjelajahi berbagai destinasi. Alternatifnya, gunakan angkutan umum atau ikut tur yang diselenggarakan oleh agen perjalanan lokal.</li>
+                <li><strong>Akomodasi:</strong> Tersedia berbagai pilihan penginapan dari hotel berbintang hingga homestay dengan keluarga lokal untuk pengalaman yang lebih autentik.</li>
+                <li><strong>Perlengkapan:</strong> Untuk destinasi alam, bawalah pakaian dan sepatu yang sesuai, obat nyamuk, sunscreen, dan persediaan air yang cukup.</li>
+                <li><strong>Budaya:</strong> Hormati adat istiadat lokal, minta izin sebelum memotret masyarakat atau upacara adat, dan berpakaian sopan terutama saat mengunjungi tempat ibadah.</li>
+            </ul>
+        </div>
+        
+        <div class="map-section">
+            <h3>Peta Wisata Sumatera Utara</h3>
+            <p style="text-align: center;">Sumatera Utara terbagi menjadi beberapa kawasan wisata utama:</p>
+            <div style="display: flex; flex-wrap: wrap; justify-content: space-around; margin-top: 20px;">
+                <div style="width: 200px; margin-bottom: 20px;">
+                    <h4 style="color: #14aa52; margin-bottom: 10px;">Kawasan Danau Toba</h4>
+                    <ul style="padding-left: 20px; margin: 0;">
+                        <li>Danau Toba</li>
+                        <li>Pulau Samosir</li>
+                        <li>Air Terjun Sipiso-piso</li>
+                        <li>Parapat</li>
+                    </ul>
+                </div>
+                <div style="width: 200px; margin-bottom: 20px;">
+                    <h4 style="color: #14aa52; margin-bottom: 10px;">Kawasan Medan-Deli Serdang</h4>
+                    <ul style="padding-left: 20px; margin: 0;">
+                        <li>Kota Medan</li>
+                        <li>Pantai Cermin</li>
+                        <li>Maimun Palace</li>
+                        <li>Rahmat International Wildlife Museum</li>
+                    </ul>
+                </div>
+                <div style="width: 200px; margin-bottom: 20px;">
+                    <h4 style="color: #14aa52; margin-bottom: 10px;">Kawasan Dataran Tinggi Karo</h4>
+                    <ul style="padding-left: 20px; margin: 0;">
+                        <li>Berastagi</li>
+                        <li>Gunung Sibayak</li>
+                        <li>Lumbini Park</li>
+                        <li>Desa Lingga</li>
+                    </ul>
+                </div>
+                <div style="width: 200px; margin-bottom: 20px;">
+                    <h4 style="color: #14aa52; margin-bottom: 10px;">Kawasan Langkat</h4>
+                    <ul style="padding-left: 20px; margin: 0;">
+                        <li>Bukit Lawang</li>
+                        <li>Tangkahan</li>
+                        <li>Taman Nasional Gunung Leuser</li>
+                        <li>Air Terjun Dua Warna</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        
+        <div class="info-section">
+            <div class="info-card">
+                <h3>Ekowisata</h3>
+                <p>Sumatera Utara memiliki potensi ekowisata yang luar biasa dengan keberadaan Taman Nasional Gunung Leuser yang merupakan bagian dari Warisan Dunia UNESCO "Tropical Rainforest Heritage of Sumatra". Pengunjung dapat melihat satwa liar seperti orangutan, gajah Sumatera, harimau Sumatera (meski sangat jarang), dan berbagai spesies burung. Selain itu, upaya konservasi di Bukit Lawang dan Tangkahan menawarkan pengalaman berinteraksi dengan satwa langka sambil berkontribusi pada pelestariannya.</p>
+            </div>
+            
+            <div class="info-card">
+                <h3>Wisata Bahari</h3>
+                <p>Meski kurang terkenal dibandingkan destinasi lainnya, Sumatera Utara memiliki potensi wisata bahari yang menarik, terutama di sepanjang pesisir timur dan pulau-pulau lepas pantai. Pulau Berhala dan Pantai Cermin adalah beberapa destinasi bahari yang populer. Pulau Nias di lepas pantai barat Sumatera Utara juga terkenal dengan ombaknya yang menarik para peselancar internasional dan budaya lokalnya yang unik.</p>
+            </div>
+            
+            <div class="info-card">
+                <h3>Pengembangan Pariwisata</h3>
+                <p>Pemerintah Indonesia telah menetapkan Danau Toba sebagai salah satu dari 10 Destinasi Pariwisata Prioritas. Berbagai pengembangan infrastruktur seperti perbaikan jalan, bandara, dan fasilitas wisata sedang dilakukan untuk meningkatkan aksesibilitas dan kenyamanan wisatawan. Pengembangan ini diharapkan dapat mendorong perekonomian lokal dan memperkenalkan keindahan Sumatera Utara ke mata dunia, sambil tetap menjaga keberlanjutan lingkungan dan keaslian budaya lokalnya.</p>
+            </div>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html> 

@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kuliner - Sumatera Utara</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        body {
+            background-color: #fff;
+            color: #333;
+        }
+        
+        /* Override header styles for visibility */
+        header {
+            background-color: #222 !important;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+        }
+        
+        .content-container {
+            max-width: 1140px;
+            margin: 40px auto;
+            padding: 0 20px;
+        }
+
+        .hero-image {
+            width: 100%;
+            height: 500px;
+            object-fit: cover;
+            border-radius: 10px;
+            margin-bottom: 30px;
+        }
+
+        .title {
+            font-size: 2.5em;
+            font-weight: bold;
+            margin-bottom: 10px;
+            color: #14aa52;
+        }
+
+        .subtitle {
+            font-size: 1.8em;
+            font-weight: bold;
+            margin-bottom: 20px;
+            color: #222;
+        }
+
+        .description {
+            font-size: 1.2em;
+            line-height: 1.6;
+            margin-bottom: 30px;
+            color: #333;
+        }
+
+        .info-section {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+
+        .info-card {
+            background-color: #f5f5f5;
+            padding: 25px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .info-card h3 {
+            color: #14aa52;
+            font-size: 1.5em;
+            margin-top: 0;
+            margin-bottom: 15px;
+        }
+
+        .info-card p {
+            font-size: 1.1em;
+            line-height: 1.5;
+            color: #333;
+        }
+        
+        .food-item {
+            display: flex;
+            margin-bottom: 40px;
+            border-bottom: 1px dashed #ddd;
+            padding-bottom: 30px;
+        }
+        
+        .food-item:last-child {
+            border-bottom: none;
+        }
+        
+        .food-item .name {
+            width: 200px;
+            font-size: 1.4em;
+            font-weight: bold;
+            color: #14aa52;
+            padding-right: 20px;
+        }
+        
+        .food-item .description {
+            flex: 1;
+            margin-bottom: 0;
+        }
+        
+        .spice-box {
+            background-color: #f8f4e8;
+            padding: 25px;
+            border-radius: 10px;
+            margin: 30px 0;
+            border-left: 4px solid #e8bc4f;
+        }
+        
+        .spice-box h3 {
+            color: #b38c30;
+            margin-top: 0;
+            margin-bottom: 15px;
+            font-size: 1.5em;
+        }
+        
+        .culinary-map {
+            background-color: #f5f5f5;
+            padding: 25px;
+            border-radius: 10px;
+            margin-top: 30px;
+        }
+        
+        .culinary-map h3 {
+            color: #14aa52;
+            margin-top: 0;
+            margin-bottom: 15px;
+            font-size: 1.5em;
+            text-align: center;
+        }
+        
+        .culinary-map ul {
+            columns: 2;
+            column-gap: 30px;
+        }
+        
+        .culinary-map li {
+            margin-bottom: 10px;
+            break-inside: avoid;
+        }
+
+        @media screen and (max-width: 768px) {
+            .hero-image {
+                height: 300px;
+            }
+            
+            .food-item {
+                flex-direction: column;
+            }
+            
+            .food-item .name {
+                width: 100%;
+                margin-bottom: 10px;
+            }
+            
+            .culinary-map ul {
+                columns: 1;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="logo" style="margin-right: 100px;">SUMATERA UTARA</div>
+        <nav>
+            <a href="index.html">Beranda</a>
+            <a href="tentang.html">Tentang</a>
+            <a href="danau-toba.html">Danau Toba</a>
+            <a href="budaya.html">Budaya Batak</a>
+            <a href="kuliner.html" class="active">Kuliner</a>
+            <a href="medan.html">Kota Medan</a>
+            <a href="wisata.html">Wisata Lainnya</a>
+            <a href="festival.html">Festival</a>
+            <a href="galeri.html">Galeri</a>
+            <a href="kontak.html">Kontak</a>
+        </nav>
+    </header>
+
+    <div class="content-container">
+        <img src="./image/img4.jpg" alt="Kuliner Khas Sumatera Utara" class="hero-image">
+        
+        <div class="title">KULINER SUMATERA UTARA</div>
+        <div class="subtitle">Kekayaan Cita Rasa Nusantara</div>
+        
+        <div class="description">
+            Sumatera Utara memiliki beragam kuliner khas yang mencerminkan kekayaan budaya dan sejarahnya. Makanan tradisional Sumatera Utara dikenal dengan cita rasa yang kuat, pedas, serta penggunaan rempah-rempah khas seperti andaliman dan asam gelugur. Pengaruh budaya Batak, Melayu, Tionghoa, dan India turut memperkaya khazanah kuliner di provinsi ini.
+        </div>
+        
+        <div class="spice-box">
+            <h3>Andaliman: Rempah Ajaib dari Sumatera Utara</h3>
+            <p>Andaliman (Zanthoxylum acanthopodium) adalah rempah khas Sumatera Utara yang memberikan sensasi getir dan sedikit mati rasa pada lidah. Rempah ini mirip dengan Sichuan pepper dari Tiongkok dan hanya tumbuh di dataran tinggi Sumatera Utara. Andaliman menjadi bumbu wajib dalam masakan tradisional Batak seperti Arsik dan Saksang, memberikan aroma citrus yang khas dan sensasi menggetarkan di lidah.</p>
+        </div>
+        
+        <h3 style="color: #14aa52; margin-top: 40px;">Hidangan Tradisional</h3>
+        
+        <div class="food-item">
+            <div class="name">Saksang</div>
+            <div class="description">
+                Saksang adalah hidangan daging babi atau anjing (pada masa lalu) yang dimasak dengan darah segar dan berbagai rempah seperti andaliman, cabai, bawang, serai, dan asam. Hidangan ini biasanya disajikan dalam upacara adat Batak. Meski terdengar eksotis, Saksang memiliki citarasa yang kaya dan kompleks, mencerminkan keberanian masyarakat Batak dalam mengolah bahan makanan.
+            </div>
+        </div>
+        
+        <div class="food-item">
+            <div class="name">Arsik</div>
+            <div class="description">
+                Arsik adalah hidangan ikan mas yang dimasak dengan bumbu kuning kaya rempah dan andaliman. Ikan dimasak hingga kuahnya mengental dan meresap sempurna ke dalam daging ikan. Hidangan ini memiliki citarasa gurih, asam, dan pedas yang seimbang. Arsik biasanya disajikan pada acara adat dan pertemuan keluarga penting. Ikan yang digunakan harus segar dan dimasak dengan api kecil agar bumbu meresap dengan sempurna.
+            </div>
+        </div>
+        
+        <div class="food-item">
+            <div class="name">Babi Panggang Karo</div>
+            <div class="description">
+                Babi Panggang Karo (BPK) adalah hidangan daging babi yang dipanggang dengan bumbu khas suku Karo. Daging yang telah dibumbui dipanggang hingga kecokelatan, kemudian diiris tipis dan disajikan dengan kuah saus andaliman yang pedas, sayur daun ubi, dan nasi. BPK menjadi salah satu kuliner paling populer dari Tanah Karo dan banyak diburu wisatawan yang berkunjung ke Sumatera Utara.
+            </div>
+        </div>
+        
+        <div class="food-item">
+            <div class="name">Mie Gomak</div>
+            <div class="description">
+                Mie Gomak adalah mi tradisional Batak Toba yang dibuat dari tepung terigu dan diolah dengan bumbu khas seperti andaliman, kemiri, bawang, dan cabai. Mi ini memiliki tekstur kenyal dan disajikan dengan kuah kental berbumbu yang gurih dan pedas. Mie Gomak sering disajikan dengan tambahan sayuran, irisan telur, dan potongan ayam atau daging lainnya.
+            </div>
+        </div>
+        
+        <div class="food-item">
+            <div class="name">Soto Medan</div>
+            <div class="description">
+                Soto Medan adalah varian soto yang memiliki kuah santan berwarna kuning dengan aroma rempah yang kuat. Berbeda dengan soto dari daerah lain, Soto Medan memiliki ciri khas berupa tambahan perkedel kentang, emping, dan kerupuk udang sebagai pelengkap. Hidangan ini mencerminkan pengaruh budaya Melayu dan Jawa dalam kuliner Sumatera Utara. Soto Medan biasanya disajikan dengan nasi atau lontong.
+            </div>
+        </div>
+        
+        <div class="culinary-map">
+            <h3>Peta Kuliner Sumatera Utara</h3>
+            <ul>
+                <li><strong>Medan:</strong> Soto Medan, Laksa, Bihun Bebek, Mie Pangsit</li>
+                <li><strong>Tanah Karo:</strong> Babi Panggang Karo, Tasak Telu, Cimpa</li>
+                <li><strong>Toba:</strong> Arsik, Naniura, Dengke Mas na Niura</li>
+                <li><strong>Simalungun:</strong> Incah, Itak Gurgur</li>
+                <li><strong>Mandailing:</strong> Arsik Mandailing, Gulai Ikan Sale</li>
+                <li><strong>Pakpak:</strong> Pelleng, Mi Gomak</li>
+                <li><strong>Nias:</strong> Gowi Dano-dano, Nami Pulu</li>
+                <li><strong>Asahan:</strong> Masak Putih, Rendang Ayam</li>
+                <li><strong>Tapanuli:</strong> Saksang, Manuk Napinadar</li>
+                <li><strong>Padang Sidempuan:</strong> Sambal Tuktuk, Ikan Arsik Bakar</li>
+            </ul>
+        </div>
+        
+        <div class="info-section">
+            <div class="info-card">
+                <h3>Sajian Penutup</h3>
+                <p>Kuliner Sumatera Utara juga memiliki beragam kudapan dan pencuci mulut tradisional. Ombus-ombus adalah kue tradisional Batak berisi gula aren yang dibungkus daun pisang dan dikukus. Cipera merupakan kue dari tepung beras yang dimasak dengan gula aren. Tidak ketinggalan, Bika Ambon yang sebenarnya berasal dari Medan (meski namanya mengacu pada Ambon) telah menjadi oleh-oleh populer dari Sumatera Utara.</p>
+            </div>
+            
+            <div class="info-card">
+                <h3>Tradisi Makan</h3>
+                <p>Masyarakat Sumatera Utara, terutama suku Batak, memiliki tradisi makan bersama yang disebut "Mangan Singolngolan" di mana anggota keluarga atau komunitas berkumpul mengelilingi hidangan yang disajikan. Tradisi ini mencerminkan nilai kebersamaan dan kekeluargaan yang dijunjung tinggi. Dalam acara adat, makanan disajikan sesuai dengan status sosial dan peran dalam upacara.</p>
+            </div>
+            
+            <div class="info-card">
+                <h3>Kuliner Modern</h3>
+                <p>Seiring perkembangan zaman, kuliner Sumatera Utara mengalami inovasi dan fusi dengan masakan modern. Di kota-kota besar seperti Medan, kini banyak dijumpai restoran dan kafe yang menyajikan makanan tradisional dengan presentasi modern atau menggabungkan teknik masak kontemporer. Meski demikian, cita rasa autentik dan penggunaan rempah tradisional tetap dipertahankan sebagai identitas kuliner Sumatera Utara.</p>
+            </div>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html> 

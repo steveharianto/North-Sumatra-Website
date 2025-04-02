@@ -1,0 +1,405 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Festival - Sumatera Utara</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        body {
+            background-color: #fff;
+            color: #333;
+        }
+        
+        /* Override header styles for visibility */
+        header {
+            background-color: #222 !important;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+        }
+        
+        .content-container {
+            max-width: 1140px;
+            margin: 40px auto;
+            padding: 0 20px;
+        }
+
+        .hero-image {
+            width: 100%;
+            height: 500px;
+            object-fit: cover;
+            border-radius: 10px;
+            margin-bottom: 30px;
+        }
+
+        .title {
+            font-size: 2.5em;
+            font-weight: bold;
+            margin-bottom: 10px;
+            color: #14aa52;
+        }
+
+        .subtitle {
+            font-size: 1.8em;
+            font-weight: bold;
+            margin-bottom: 20px;
+            color: #222;
+        }
+
+        .description {
+            font-size: 1.2em;
+            line-height: 1.6;
+            margin-bottom: 30px;
+            color: #333;
+        }
+        
+        .festivals-container {
+            margin: 40px 0;
+        }
+        
+        .festival-item {
+            display: flex;
+            margin-bottom: 50px;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .festival-item:last-child {
+            margin-bottom: 0;
+        }
+        
+        .festival-item::after {
+            content: '';
+            position: absolute;
+            left: 120px;
+            top: 0;
+            bottom: 0;
+            width: 3px;
+            background-color: #f0f0f0;
+            z-index: -1;
+        }
+        
+        .festival-date {
+            width: 120px;
+            flex-shrink: 0;
+            padding-right: 30px;
+            text-align: right;
+        }
+        
+        .festival-date .month {
+            font-size: 1.2em;
+            font-weight: bold;
+            color: #14aa52;
+        }
+        
+        .festival-date .period {
+            font-size: 0.9em;
+            color: #666;
+        }
+        
+        .festival-content {
+            flex: 1;
+            background-color: #f9f9f9;
+            border-radius: 10px;
+            padding: 25px;
+            padding-left: 35px;
+            position: relative;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+        }
+        
+        .festival-content::before {
+            content: '';
+            position: absolute;
+            left: -10px;
+            top: 20px;
+            width: 20px;
+            height: 20px;
+            background-color: #14aa52;
+            border-radius: 50%;
+        }
+        
+        .festival-content h3 {
+            margin-top: 0;
+            margin-bottom: 10px;
+            color: #14aa52;
+            font-size: 1.5em;
+        }
+        
+        .festival-content p {
+            margin: 0;
+            line-height: 1.5;
+            margin-bottom: 15px;
+        }
+        
+        .festival-content p:last-child {
+            margin-bottom: 0;
+        }
+        
+        .festival-content .location {
+            font-size: 0.9em;
+            color: #666;
+            display: flex;
+            align-items: center;
+            margin-bottom: 15px;
+        }
+        
+        .festival-content .location::before {
+            content: '📍';
+            margin-right: 5px;
+        }
+        
+        .highlight-box {
+            background-color: #f1f8ff;
+            border-left: 4px solid #3498db;
+            padding: 20px 25px;
+            margin: 30px 0;
+            border-radius: 0 10px 10px 0;
+        }
+        
+        .highlight-box h3 {
+            color: #3498db;
+            margin-top: 0;
+            margin-bottom: 15px;
+        }
+        
+        .festival-gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 15px;
+            margin: 40px 0;
+        }
+        
+        .gallery-item {
+            height: 200px;
+            border-radius: 10px;
+            overflow: hidden;
+            position: relative;
+        }
+        
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.3s ease;
+        }
+        
+        .gallery-item:hover img {
+            transform: scale(1.05);
+        }
+        
+        .gallery-item .caption {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: linear-gradient(to top, rgba(0,0,0,0.7), transparent);
+            color: white;
+            padding: 15px;
+            font-size: 0.9em;
+        }
+        
+        .info-section {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+
+        .info-card {
+            background-color: #f5f5f5;
+            padding: 25px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .info-card h3 {
+            color: #14aa52;
+            font-size: 1.5em;
+            margin-top: 0;
+            margin-bottom: 15px;
+        }
+
+        .info-card p {
+            font-size: 1.1em;
+            line-height: 1.5;
+            color: #333;
+        }
+        
+        @media screen and (max-width: 768px) {
+            .hero-image {
+                height: 300px;
+            }
+            
+            .festival-item {
+                flex-direction: column;
+            }
+            
+            .festival-item::after {
+                left: 20px;
+            }
+            
+            .festival-date {
+                width: 100%;
+                text-align: left;
+                padding-left: 50px;
+                margin-bottom: 15px;
+            }
+            
+            .festival-content::before {
+                left: -25px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="logo" style="margin-right: 100px;">SUMATERA UTARA</div>
+        <nav>
+            <a href="index.html">Beranda</a>
+            <a href="tentang.html">Tentang</a>
+            <a href="danau-toba.html">Danau Toba</a>
+            <a href="budaya.html">Budaya Batak</a>
+            <a href="kuliner.html">Kuliner</a>
+            <a href="medan.html">Kota Medan</a>
+            <a href="wisata.html">Wisata Lainnya</a>
+            <a href="festival.html" class="active">Festival</a>
+            <a href="galeri.html">Galeri</a>
+            <a href="kontak.html">Kontak</a>
+        </nav>
+    </header>
+
+    <div class="content-container">
+        <img src="./image/img2.jpg" alt="Festival Budaya Sumatera Utara" class="hero-image">
+        
+        <div class="title">FESTIVAL BUDAYA</div>
+        <div class="subtitle">Merayakan Kekayaan Tradisi Sumatera Utara</div>
+        
+        <div class="description">
+            Sumatera Utara memiliki ragam festival dan perayaan budaya yang menampilkan kekayaan tradisi, seni, dan kuliner dari berbagai etnis di provinsi ini. Festival-festival ini menjadi ajang untuk melestarikan warisan budaya sekaligus menjadi daya tarik wisata yang unik. Dari perayaan panen tradisional hingga festival musik modern, dari upacara adat hingga karnaval kota, Sumatera Utara menawarkan pengalaman budaya yang beragam sepanjang tahun.
+        </div>
+        
+        <div class="highlight-box">
+            <h3>Calendar of Events</h3>
+            <p>Berikut adalah beberapa festival budaya utama di Sumatera Utara yang digelar secara rutin. Tanggal pasti pelaksanaan dapat berubah setiap tahunnya, sehingga disarankan untuk mengecek informasi terkini sebelum merencanakan kunjungan Anda.</p>
+        </div>
+        
+        <div class="festivals-container">
+            <div class="festival-item">
+                <div class="festival-date">
+                    <div class="month">Februari</div>
+                    <div class="period">Awal Bulan</div>
+                </div>
+                <div class="festival-content">
+                    <h3>Festival Gondang Naposo</h3>
+                    <div class="location">Samosir, Danau Toba</div>
+                    <p>Festival Gondang Naposo adalah festival musik dan tarian tradisional yang diikuti oleh pemuda-pemudi (naposo) Batak. Para peserta menampilkan keahlian mereka dalam memainkan alat musik gondang dan menari tor-tor dalam balutan pakaian adat. Festival ini bertujuan untuk melestarikan seni tradisional Batak dan memperkenalkannya kepada generasi muda.</p>
+                    <p>Berbagai kelompok dari berbagai daerah di Sumatera Utara berkompetisi dalam festival ini, menampilkan variasi unik dari musik dan tarian tradisional Batak sesuai dengan sub-etnis mereka, seperti Batak Toba, Karo, Simalungun, dan lainnya.</p>
+                </div>
+            </div>
+            
+            <div class="festival-item">
+                <div class="festival-date">
+                    <div class="month">April</div>
+                    <div class="period">Minggu ke-2</div>
+                </div>
+                <div class="festival-content">
+                    <h3>Pesta Danau Toba</h3>
+                    <div class="location">Parapat dan sekitar Danau Toba</div>
+                    <p>Pesta Danau Toba adalah festival tahunan terbesar di Sumatera Utara yang diselenggarakan di kawasan Danau Toba. Festival ini menampilkan beragam acara seperti karnaval budaya, pertunjukan seni tradisional, lomba perahu tradisional, pameran kerajinan, dan kuliner khas Sumatera Utara.</p>
+                    <p>Sejak beberapa tahun terakhir, festival ini semakin berkembang dan menarik wisatawan dari dalam dan luar negeri. Pesta Danau Toba menjadi ajang promosi pariwisata sekaligus upaya melestarikan budaya Batak dan mengembangkan ekonomi kreatif masyarakat sekitar Danau Toba.</p>
+                </div>
+            </div>
+            
+            <div class="festival-item">
+                <div class="festival-date">
+                    <div class="month">Juni</div>
+                    <div class="period">Akhir Bulan</div>
+                </div>
+                <div class="festival-content">
+                    <h3>Festival Sigale-gale</h3>
+                    <div class="location">Tomok, Pulau Samosir</div>
+                    <p>Festival Sigale-gale menampilkan pertunjukan boneka kayu tradisional Batak yang dapat menari yang disebut Sigale-gale. Menurut kepercayaan tradisional Batak, Sigale-gale awalnya dibuat untuk mengenang anak laki-laki yang meninggal tanpa keturunan. Boneka ini digerakkan oleh pengendali dengan tali dan menari mengikuti irama musik gondang.</p>
+                    <p>Selama festival, pengunjung dapat menyaksikan parade Sigale-gale, pertunjukan tari, dan berbagai ritual tradisional lainnya. Festival ini juga menjadi kesempatan untuk belajar tentang makna budaya dan filosofi di balik tradisi Sigale-gale.</p>
+                </div>
+            </div>
+            
+            <div class="festival-item">
+                <div class="festival-date">
+                    <div class="month">Agustus</div>
+                    <div class="period">Pertengahan</div>
+                </div>
+                <div class="festival-content">
+                    <h3>Karnaval Kemerdekaan Pesona Danau Toba</h3>
+                    <div class="location">Balige, Toba Samosir</div>
+                    <p>Diselenggarakan dalam rangka memperingati kemerdekaan Indonesia, karnaval ini menampilkan keindahan budaya dan alam Sumatera Utara dalam bentuk parade dan pertunjukan seni. Peserta karnaval mengenakan kostum tradisional yang mewah dan menampilkan tarian daerah.</p>
+                    <p>Acara ini tidak hanya merayakan kemerdekaan, tetapi juga mempromosikan pariwisata Danau Toba sebagai destinasi unggulan. Karnaval Kemerdekaan Pesona Danau Toba telah menjadi agenda nasional yang didukung oleh Kementerian Pariwisata dan Ekonomi Kreatif.</p>
+                </div>
+            </div>
+            
+            <div class="festival-item">
+                <div class="festival-date">
+                    <div class="month">Oktober</div>
+                    <div class="period">Awal Bulan</div>
+                </div>
+                <div class="festival-content">
+                    <h3>Pesta Njuah-njuah</h3>
+                    <div class="location">Tanah Karo, Berastagi</div>
+                    <p>Pesta Njuah-njuah adalah festival panen tradisional suku Karo yang diadakan untuk mensyukuri hasil panen. Njuah-njuah sendiri berarti 'makan bersama' dalam bahasa Karo. Selama festival, masyarakat Karo menyajikan hidangan tradisional dan makan bersama di lokasi terbuka.</p>
+                    <p>Festival ini juga mencakup pertunjukan musik tradisional Karo, tari lima serangkai, pertunjukan gendang lima serangkai, dan berbagai ritual adat lainnya. Pesta Njuah-njuah menjadi ajang untuk mempererat hubungan sosial antar anggota masyarakat Karo dan melestarikan tradisi mereka.</p>
+                </div>
+            </div>
+            
+            <div class="festival-item">
+                <div class="festival-date">
+                    <div class="month">November</div>
+                    <div class="period">Akhir Bulan</div>
+                </div>
+                <div class="festival-content">
+                    <h3>Medan International Coffee Festival</h3>
+                    <div class="location">Medan</div>
+                    <p>Medan International Coffee Festival merayakan kekayaan kopi Sumatera Utara yang terkenal dengan kopi Mandailing, Lintong, dan Sidikalang. Festival ini menampilkan kompetisi barista, pameran kopi dari berbagai daerah, workshop pengolahan kopi, dan tentu saja kesempatan untuk mencicipi berbagai jenis kopi khas Sumatera Utara.</p>
+                    <p>Meski tergolong festival modern, acara ini juga menampilkan aspek budaya dan sejarah kopi di Sumatera Utara, termasuk metode tradisional menanam dan mengolah kopi yang telah diwariskan selama generasi. Festival ini menarik pecinta kopi dari dalam dan luar negeri.</p>
+                </div>
+            </div>
+        </div>
+        
+        <div class="festival-gallery">
+            <div class="gallery-item">
+                <img src="./image/img2.jpg" alt="Festival Gondang Naposo">
+                <div class="caption">Pertunjukan musik Gondang pada Festival Gondang Naposo</div>
+            </div>
+            <div class="gallery-item">
+                <img src="./image/img1.jpg" alt="Pesta Danau Toba">
+                <div class="caption">Karnaval perahu tradisional di Pesta Danau Toba</div>
+            </div>
+            <div class="gallery-item">
+                <img src="./image/img3.jpg" alt="Festival Sigale-gale">
+                <div class="caption">Boneka Sigale-gale menari pada Festival Sigale-gale</div>
+            </div>
+            <div class="gallery-item">
+                <img src="./image/img4.jpg" alt="Pesta Njuah-njuah">
+                <div class="caption">Makan bersama pada Pesta Njuah-njuah di Tanah Karo</div>
+            </div>
+        </div>
+        
+        <div class="info-section">
+            <div class="info-card">
+                <h3>Upacara Adat</h3>
+                <p>Selain festival yang terjadwal, masyarakat Sumatera Utara juga memiliki berbagai upacara adat yang diselenggarakan sesuai kebutuhan keluarga atau komunitas. Upacara pernikahan adat Batak (Horja), upacara pemakaman (Saur Matua), dan upacara mangokkal holi (penggalian tulang belulang leluhur untuk dipindahkan ke makam baru) adalah beberapa upacara adat penting dalam budaya Batak. Upacara-upacara ini menampilkan keunikan tradisi Batak yang kaya akan simbolisme dan nilai filosofis.</p>
+            </div>
+            
+            <div class="info-card">
+                <h3>Festival Modern</h3>
+                <p>Seiring perkembangan zaman, berbagai festival modern juga mulai diadakan di Sumatera Utara, terutama di kota besar seperti Medan. Medan International Jazz Festival, Medan Film Festival, dan Lake Toba Music Festival adalah beberapa contoh festival modern yang menggabungkan unsur kontemporer dengan sentuhan budaya lokal. Festival-festival ini menarik seniman dan pengunjung dari berbagai daerah dan menjadi ajang kreativitas yang menarik.</p>
+            </div>
+            
+            <div class="info-card">
+                <h3>Tips Mengunjungi Festival</h3>
+                <p>Untuk pengalaman optimal saat mengunjungi festival di Sumatera Utara, disarankan untuk memeriksa jadwal pasti pelaksanaan festival melalui situs resmi Dinas Pariwisata Sumatera Utara atau menghubungi agen perjalanan lokal. Berpakaian sopan dan menghormati adat istiadat setempat adalah hal penting yang perlu diperhatikan, terutama saat menghadiri upacara adat. Jangan ragu untuk berinteraksi dengan masyarakat lokal, karena mereka biasanya senang berbagi pengetahuan tentang budaya mereka kepada pengunjung yang menunjukkan minat yang tulus.</p>
+            </div>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html> 

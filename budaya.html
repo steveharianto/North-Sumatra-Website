@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Budaya Batak - Sumatera Utara</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        body {
+            background-color: #fff;
+            color: #333;
+        }
+        
+        /* Override header styles for visibility */
+        header {
+            background-color: #222 !important;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+        }
+        
+        .content-container {
+            max-width: 1140px;
+            margin: 40px auto;
+            padding: 0 20px;
+        }
+
+        .hero-image {
+            width: 100%;
+            height: 500px;
+            object-fit: cover;
+            border-radius: 10px;
+            margin-bottom: 30px;
+        }
+
+        .title {
+            font-size: 2.5em;
+            font-weight: bold;
+            margin-bottom: 10px;
+            color: #14aa52;
+        }
+
+        .subtitle {
+            font-size: 1.8em;
+            font-weight: bold;
+            margin-bottom: 20px;
+            color: #222;
+        }
+
+        .description {
+            font-size: 1.2em;
+            line-height: 1.6;
+            margin-bottom: 30px;
+            color: #333;
+        }
+
+        .info-section {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+
+        .info-card {
+            background-color: #f5f5f5;
+            padding: 25px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .info-card h3 {
+            color: #14aa52;
+            font-size: 1.5em;
+            margin-top: 0;
+            margin-bottom: 15px;
+        }
+
+        .info-card p {
+            font-size: 1.1em;
+            line-height: 1.5;
+            color: #333;
+        }
+        
+        .cultural-element {
+            display: flex;
+            margin-bottom: 40px;
+            align-items: center;
+        }
+        
+        .cultural-element .number {
+            font-size: 3em;
+            font-weight: bold;
+            color: #14aa52;
+            opacity: 0.3;
+            margin-right: 20px;
+            line-height: 1;
+        }
+        
+        .cultural-element .content {
+            flex: 1;
+        }
+        
+        .cultural-element h3 {
+            color: #14aa52;
+            font-size: 1.5em;
+            margin-top: 0;
+            margin-bottom: 10px;
+        }
+        
+        .quote {
+            font-style: italic;
+            background-color: #f5f5f5;
+            padding: 20px;
+            border-radius: 10px;
+            position: relative;
+            margin: 30px 0;
+        }
+        
+        .quote:before {
+            content: """;
+            position: absolute;
+            top: -10px;
+            left: 10px;
+            font-size: 3em;
+            color: #14aa52;
+            opacity: 0.3;
+        }
+
+        @media screen and (max-width: 768px) {
+            .hero-image {
+                height: 300px;
+            }
+            
+            .cultural-element {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+            
+            .cultural-element .number {
+                margin-bottom: 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="logo" style="margin-right: 100px;">SUMATERA UTARA</div>
+        <nav>
+            <a href="index.html">Beranda</a>
+            <a href="tentang.html">Tentang</a>
+            <a href="danau-toba.html">Danau Toba</a>
+            <a href="budaya.html" class="active">Budaya Batak</a>
+            <a href="kuliner.html">Kuliner</a>
+            <a href="medan.html">Kota Medan</a>
+            <a href="wisata.html">Wisata Lainnya</a>
+            <a href="festival.html">Festival</a>
+            <a href="galeri.html">Galeri</a>
+            <a href="kontak.html">Kontak</a>
+        </nav>
+    </header>
+
+    <div class="content-container">
+        <img src="./image/img2.jpg" alt="Rumah Adat Batak dan Upacara Tradisional" class="hero-image">
+        
+        <div class="title">BUDAYA BATAK</div>
+        <div class="subtitle">Warisan Budaya yang Kaya dan Beragam</div>
+        
+        <div class="description">
+            Suku Batak adalah salah satu suku bangsa terbesar di Indonesia yang mendiami dataran tinggi Sumatera Utara. Terdiri dari enam sub-suku utama: Toba, Karo, Simalungun, Pakpak, Mandailing, dan Angkola, masing-masing memiliki dialek dan variasi budaya tersendiri namun tetap berbagi identitas sebagai orang Batak.
+        </div>
+        
+        <div class="quote">
+            "Dalihan Na Tolu" (tungku berkaki tiga) merupakan sistem kekerabatan Batak yang menopang struktur sosial dan mengatur hubungan antara tiga unsur kekerabatan: Hula-hula (keluarga dari pihak istri), Dongan Tubu (keluarga semarga), dan Boru (keluarga dari pihak suami anak perempuan).
+        </div>
+        
+        <div class="cultural-element">
+            <div class="number">01</div>
+            <div class="content">
+                <h3>Rumah Adat Batak (Rumah Bolon)</h3>
+                <p>Rumah Bolon merupakan rumah adat tradisional suku Batak yang memiliki bentuk khas dengan atap yang menjulang tinggi menyerupai tanduk kerbau. Rumah ini dibangun tanpa menggunakan paku, melainkan menggunakan teknik ikat dan pasak. Struktur bangunan dibagi menjadi tiga bagian utama yang melambangkan dunia atas (banua ginjang), dunia tengah (banua tonga), dan dunia bawah (banua toru). Rumah Bolon biasanya dihiasi dengan ukiran-ukiran bermotif Gorga yang memiliki makna filosofis dan spiritual.</p>
+            </div>
+        </div>
+        
+        <div class="cultural-element">
+            <div class="number">02</div>
+            <div class="content">
+                <h3>Musik dan Tarian</h3>
+                <p>Gondang adalah alat musik tradisional Batak yang terdiri dari seperangkat gendang dan gong. Musik Gondang biasanya dimainkan pada upacara adat seperti pernikahan, pemakaman, dan perayaan panen. Tarian Tor-tor merupakan tarian tradisional Batak yang diiringi musik Gondang, di mana penari bergerak dengan gerakan tangan dan kaki yang khas, serta ekspresi wajah yang tenang dan penuh penghayatan. Tarian ini memiliki beragam jenis sesuai dengan konteks upacara yang sedang diselenggarakan.</p>
+            </div>
+        </div>
+        
+        <div class="cultural-element">
+            <div class="number">03</div>
+            <div class="content">
+                <h3>Ulos: Kain Tenun Sakral</h3>
+                <p>Ulos adalah kain tenun tradisional Batak yang memiliki nilai filosofis dan spiritual tinggi. Dalam kepercayaan Batak, Ulos merupakan perwujudan dari berkat dan perlindungan. Kain ini digunakan dalam berbagai upacara adat seperti kelahiran, pernikahan, dan kematian. Terdapat berbagai jenis Ulos dengan motif dan fungsi berbeda, seperti Ulos Ragidup untuk pernikahan, Ulos Saput untuk pemakaman, dan Ulos Ragi Hotang untuk pakaian sehari-hari. Proses pembuatan Ulos sangat rumit dan memerlukan keterampilan khusus yang diwariskan secara turun-temurun.</p>
+            </div>
+        </div>
+        
+        <div class="info-section">
+            <div class="info-card">
+                <h3>Marga dalam Budaya Batak</h3>
+                <p>Marga merupakan identitas klan patrilineal yang sangat penting dalam struktur sosial masyarakat Batak. Sistem marga berfungsi sebagai pengatur perkawinan eksogami (larangan menikah dalam satu marga) dan menentukan posisi seseorang dalam upacara adat. Beberapa marga besar Batak antara lain Simbolon, Siburian, Sitorus, Panjaitan, Simatupang, Sinaga, Silalahi, Sihombing, dan Hutabarat.</p>
+            </div>
+            
+            <div class="info-card">
+                <h3>Upacara Adat</h3>
+                <p>Masyarakat Batak memiliki berbagai upacara adat yang masih dilestarikan hingga kini. Mangokkal Holi (penggalian tulang belulang leluhur) merupakan upacara penting dalam tradisi Batak Toba. Upacara ini dilakukan untuk memindahkan tulang belulang leluhur ke tempat pemakaman baru dengan tujuan menghormati dan memperoleh berkat dari arwah leluhur. Upacara pernikahan Batak juga sangat kaya dengan ritual dan simbol, seperti mangulosi (pemberian Ulos), manulangi (pemberian makanan), dan margondang (pesta dengan musik Gondang).</p>
+            </div>
+            
+            <div class="info-card">
+                <h3>Aksara Batak</h3>
+                <p>Suku Batak memiliki sistem tulisan tradisional yang disebut aksara Batak atau surat Batak. Aksara ini termasuk dalam rumpun Brahmi dan sudah ada sejak abad ke-14. Meski penggunaannya semakin jarang, upaya pelestarian aksara Batak terus dilakukan melalui pendidikan dan dokumentasi. Aksara Batak biasanya digunakan untuk menulis pustaha (kitab) yang berisi ilmu pengobatan, ramalan, dan mantra.</p>
+            </div>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html> 

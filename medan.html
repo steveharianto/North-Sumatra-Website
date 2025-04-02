@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kota Medan - Sumatera Utara</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        body {
+            background-color: #fff;
+            color: #333;
+        }
+        
+        /* Override header styles for visibility */
+        header {
+            background-color: #222 !important;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+        }
+        
+        .content-container {
+            max-width: 1140px;
+            margin: 40px auto;
+            padding: 0 20px;
+        }
+
+        .hero-image {
+            width: 100%;
+            height: 500px;
+            object-fit: cover;
+            border-radius: 10px;
+            margin-bottom: 30px;
+        }
+
+        .title {
+            font-size: 2.5em;
+            font-weight: bold;
+            margin-bottom: 10px;
+            color: #14aa52;
+        }
+
+        .subtitle {
+            font-size: 1.8em;
+            font-weight: bold;
+            margin-bottom: 20px;
+            color: #222;
+        }
+
+        .description {
+            font-size: 1.2em;
+            line-height: 1.6;
+            margin-bottom: 30px;
+            color: #333;
+        }
+
+        .info-section {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+
+        .info-card {
+            background-color: #f5f5f5;
+            padding: 25px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .info-card h3 {
+            color: #14aa52;
+            font-size: 1.5em;
+            margin-top: 0;
+            margin-bottom: 15px;
+        }
+
+        .info-card p {
+            font-size: 1.1em;
+            line-height: 1.5;
+            color: #333;
+        }
+        
+        .landmark {
+            margin-bottom: 30px;
+            background-color: #f5f5f5;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        
+        .landmark .header {
+            background-color: #14aa52;
+            color: white;
+            padding: 15px 25px;
+        }
+        
+        .landmark .header h3 {
+            margin: 0;
+            font-size: 1.4em;
+        }
+        
+        .landmark .content {
+            padding: 20px 25px;
+        }
+        
+        .landmark p {
+            margin: 0;
+            line-height: 1.5;
+        }
+        
+        .timeline {
+            position: relative;
+            max-width: 800px;
+            margin: 40px auto;
+        }
+        
+        .timeline::after {
+            content: '';
+            position: absolute;
+            width: 4px;
+            background-color: #14aa52;
+            top: 0;
+            bottom: 0;
+            left: 50%;
+            margin-left: -2px;
+        }
+        
+        .timeline-container {
+            padding: 10px 40px;
+            position: relative;
+            background-color: inherit;
+            width: 50%;
+        }
+        
+        .timeline-container::after {
+            content: '';
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            background-color: white;
+            border: 4px solid #14aa52;
+            top: 15px;
+            border-radius: 50%;
+            z-index: 1;
+        }
+        
+        .left {
+            left: 0;
+        }
+        
+        .right {
+            left: 50%;
+        }
+        
+        .left::after {
+            right: -10px;
+        }
+        
+        .right::after {
+            left: -10px;
+        }
+        
+        .timeline-content {
+            padding: 15px 20px;
+            background-color: #f5f5f5;
+            position: relative;
+            border-radius: 6px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        
+        .timeline-content h3 {
+            margin-top: 0;
+            color: #14aa52;
+            font-size: 1.3em;
+        }
+        
+        .quote-box {
+            background-color: #f5f5f5;
+            border-left: 5px solid #14aa52;
+            padding: 20px;
+            margin: 30px 0;
+            font-style: italic;
+            line-height: 1.6;
+        }
+
+        @media screen and (max-width: 768px) {
+            .hero-image {
+                height: 300px;
+            }
+            
+            .timeline::after {
+                left: 31px;
+            }
+            
+            .timeline-container {
+                width: 100%;
+                padding-left: 70px;
+                padding-right: 25px;
+            }
+            
+            .timeline-container::after {
+                left: 21px;
+            }
+            
+            .left::after, .right::after {
+                left: 21px;
+            }
+            
+            .right {
+                left: 0%;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="logo" style="margin-right: 100px;">SUMATERA UTARA</div>
+        <nav>
+            <a href="index.html">Beranda</a>
+            <a href="tentang.html">Tentang</a>
+            <a href="danau-toba.html">Danau Toba</a>
+            <a href="budaya.html">Budaya Batak</a>
+            <a href="kuliner.html">Kuliner</a>
+            <a href="medan.html" class="active">Kota Medan</a>
+            <a href="wisata.html">Wisata Lainnya</a>
+            <a href="festival.html">Festival</a>
+            <a href="galeri.html">Galeri</a>
+            <a href="kontak.html">Kontak</a>
+        </nav>
+    </header>
+
+    <div class="content-container">
+        <img src="./image/img3.jpg" alt="Kota Medan" class="hero-image">
+        
+        <div class="title">KOTA MEDAN</div>
+        <div class="subtitle">Ibukota Sumatera Utara yang Multikultural</div>
+        
+        <div class="description">
+            Medan adalah kota terbesar ketiga di Indonesia setelah Jakarta dan Surabaya, serta merupakan ibukota Provinsi Sumatera Utara. Terletak di pesisir timur Pulau Sumatera, kota ini berkembang dari kota perdagangan kecil menjadi metropolis yang menjadi pusat perekonomian, pendidikan, dan budaya di bagian barat Indonesia.
+        </div>
+        
+        <div class="quote-box">
+            "Medan adalah kota yang menawarkan pengalaman perjumpaan budaya yang unik. Di sini, Anda dapat menyaksikan harmonisasi budaya Melayu, Batak, Tionghoa, Tamil, Jawa, dan Minangkabau yang hidup berdampingan, menciptakan mozaik kultural yang kaya dan beragam."
+        </div>
+        
+        <div class="description">
+            Dengan populasi sekitar 2,2 juta jiwa, Medan memiliki karakter kosmopolitan dengan berbagai etnis yang hidup berdampingan. Keberagaman ini tercermin dalam arsitektur, kuliner, bahasa, dan tradisi yang dapat ditemui di berbagai sudut kota. Pengaruh kolonial Belanda masih dapat dilihat dari bangunan-bangunan bersejarah yang tersebar di pusat kota.
+        </div>
+        
+        <h3 style="color: #14aa52; margin-top: 40px; text-align: center;">Sejarah Kota Medan</h3>
+        
+        <div class="timeline">
+            <div class="timeline-container left">
+                <div class="timeline-content">
+                    <h3>Abad ke-16</h3>
+                    <p>Sebelum berkembang menjadi kota, wilayah Medan merupakan bagian dari Kesultanan Deli. Kawasan ini awalnya berupa perkampungan kecil yang dihuni oleh suku Melayu dan Batak.</p>
+                </div>
+            </div>
+            <div class="timeline-container right">
+                <div class="timeline-content">
+                    <h3>1860-an</h3>
+                    <p>Jacobus Nienhuys, seorang pengusaha Belanda, memulai perkebunan tembakau di wilayah ini. Kesuksesan perkebunan tembakau Deli menarik banyak perusahaan Eropa untuk membuka perkebunan di sekitar Medan.</p>
+                </div>
+            </div>
+            <div class="timeline-container left">
+                <div class="timeline-content">
+                    <h3>1869</h3>
+                    <p>Medan resmi menjadi kota dan menjadi pusat administrasi pemerintahan kolonial Belanda di Sumatera Timur. Pembangunan infrastruktur seperti jalan, rel kereta api, dan pelabuhan mulai dikembangkan.</p>
+                </div>
+            </div>
+            <div class="timeline-container right">
+                <div class="timeline-content">
+                    <h3>1915</h3>
+                    <p>Medan menjadi gemeente (kotamadya) dan mengalami perkembangan pesat sebagai pusat perdagangan dan perkebunan. Banyak bangunan kolonial dibangun pada era ini, seperti Kantor Pos, Balai Kota, dan Istana Maimun.</p>
+                </div>
+            </div>
+            <div class="timeline-container left">
+                <div class="timeline-content">
+                    <h3>1945-1950</h3>
+                    <p>Setelah kemerdekaan Indonesia, Medan menjadi salah satu kota penting dalam perjuangan mempertahankan kemerdekaan. Pada tahun 1950, Medan secara resmi menjadi ibukota Provinsi Sumatera Utara.</p>
+                </div>
+            </div>
+            <div class="timeline-container right">
+                <div class="timeline-content">
+                    <h3>Saat Ini</h3>
+                    <p>Medan berkembang menjadi pusat bisnis, pendidikan, dan budaya di Sumatera. Kota ini terus mengalami modernisasi dengan pembangunan mal, apartemen, universitas, dan infrastruktur kota lainnya.</p>
+                </div>
+            </div>
+        </div>
+        
+        <h3 style="color: #14aa52; margin-top: 40px;">Tempat Wisata Populer</h3>
+        
+        <div class="landmark">
+            <div class="header">
+                <h3>Istana Maimun</h3>
+            </div>
+            <div class="content">
+                <p>Istana Maimun adalah istana Kesultanan Deli yang dibangun pada tahun 1888. Istana ini memiliki arsitektur unik yang menggabungkan gaya Melayu, Islam, Spanyol, India, dan Italia. Dengan 30 ruangan, istana ini menjadi salah satu bangunan bersejarah yang menarik untuk dikunjungi. Pengunjung dapat melihat koleksi pusaka keraton, foto-foto Sultan Deli dari berbagai generasi, dan menyewa pakaian tradisional untuk berfoto di dalam istana.</p>
+            </div>
+        </div>
+        
+        <div class="landmark">
+            <div class="header">
+                <h3>Masjid Raya Al-Mashun (Masjid Agung Medan)</h3>
+            </div>
+            <div class="content">
+                <p>Dibangun pada tahun 1906 dan selesai pada tahun 1909, Masjid Raya Al-Mashun merupakan masjid megah dengan arsitektur khas Timur Tengah, Spanyol, dan India. Masjid ini memiliki kubah berwarna hitam dan empat menara di setiap sudutnya. Interior masjid dihiasi dengan ornamen dan kaligrafi indah. Lokasinya berdekatan dengan Istana Maimun membuat kedua tempat ini sering dikunjungi dalam satu rute perjalanan.</p>
+            </div>
+        </div>
+        
+        <div class="landmark">
+            <div class="header">
+                <h3>Tjong A Fie Mansion</h3>
+            </div>
+            <div class="content">
+                <p>Rumah bersejarah yang dibangun pada tahun 1895 oleh Tjong A Fie, seorang pengusaha Tionghoa yang berpengaruh di Medan pada masa kolonial. Bangunan dua lantai ini menggabungkan arsitektur Tionghoa dan Eropa dengan interior yang mewah. Di dalam mansion terdapat furnitur antik, foto-foto keluarga, dan artefak sejarah yang memberikan gambaran kehidupan elit pada masa kolonial. Mansion ini menjadi saksi bisu sejarah multikulturalisme Kota Medan.</p>
+            </div>
+        </div>
+        
+        <div class="landmark">
+            <div class="header">
+                <h3>Kesawan Square</h3>
+            </div>
+            <div class="content">
+                <p>Kawasan bersejarah di pusat Kota Medan yang memiliki deretan bangunan kolonial Belanda yang masih terawat. Jalan Kesawan (sekarang Jalan Ahmad Yani) merupakan kawasan bisnis tertua di Medan. Di area ini juga terdapat Tip Top Restaurant, restoran tertua di Medan yang berdiri sejak 1934. Pada malam hari, area ini menjadi lokasi Pasar Malam Kesawan yang menawarkan berbagai kuliner khas Medan.</p>
+            </div>
+        </div>
+        
+        <div class="info-section">
+            <div class="info-card">
+                <h3>Pusat Kuliner</h3>
+                <p>Medan dikenal sebagai surga kuliner dengan beragam hidangan yang mencerminkan keberagaman etnisnya. Beberapa tempat kuliner terkenal di Medan antara lain Jalan Selat Panjang untuk kuliner Tionghoa, Pasar Petisah untuk jajanan tradisional, Merdeka Walk untuk aneka kuliner modern, dan Kesawan untuk makanan heritage. Medan juga terkenal dengan kopi khasnya, seperti kopi Sidikalang dan kopi Mandheling yang dapat dinikmati di kedai-kedai kopi tradisional maupun modern.</p>
+            </div>
+            
+            <div class="info-card">
+                <h3>Kehidupan Modern</h3>
+                <p>Sebagai kota metropolitan, Medan menawarkan berbagai fasilitas modern seperti pusat perbelanjaan (Sun Plaza, Cambridge City Square, Center Point), hotel berbintang, restoran, kafe, dan tempat hiburan. Kota ini juga memiliki beberapa universitas terkemuka seperti Universitas Sumatera Utara dan Universitas Negeri Medan. Meski mengalami modernisasi, Medan tetap mempertahankan karakter tradisionalnya melalui pasar-pasar tradisional dan kampung-kampung etnis yang masih eksis.</p>
+            </div>
+            
+            <div class="info-card">
+                <h3>Transportasi</h3>
+                <p>Medan dilayani oleh Bandara Internasional Kualanamu yang berjarak sekitar 39 km dari pusat kota. Untuk transportasi dalam kota, tersedia angkutan umum seperti bus Trans Medan, angkot, dan taksi. Becak mesin (becak bermotor) menjadi salah satu ikon transportasi khas Medan yang tidak ditemui di kota-kota besar lainnya di Indonesia. Kota ini juga menjadi titik awal untuk menjelajahi destinasi wisata lain di Sumatera Utara seperti Danau Toba, Berastagi, dan Tangkahan.</p>
+            </div>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html> 

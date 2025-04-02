@@ -1,0 +1,566 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Galeri - Sumatera Utara</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        body {
+            background-color: #fff;
+            color: #333;
+        }
+        
+        /* Override header styles for visibility */
+        header {
+            background-color: #222 !important;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+        }
+        
+        .content-container {
+            max-width: 1140px;
+            margin: 40px auto;
+            padding: 0 20px;
+        }
+
+        .title {
+            font-size: 2.5em;
+            font-weight: bold;
+            margin-bottom: 10px;
+            color: #14aa52;
+            text-align: center;
+        }
+
+        .subtitle {
+            font-size: 1.5em;
+            font-weight: 500;
+            margin-bottom: 30px;
+            color: #222;
+            text-align: center;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        .filter-container {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-bottom: 30px;
+        }
+        
+        .filter-button {
+            padding: 8px 16px;
+            background: #f5f5f5;
+            border: none;
+            border-radius: 30px;
+            cursor: pointer;
+            font-family: Poppins, sans-serif;
+            font-size: 14px;
+            color: #333;
+            transition: all 0.3s ease;
+        }
+        
+        .filter-button:hover {
+            background: #e0e0e0;
+        }
+        
+        .filter-button.active {
+            background: #14aa52;
+            color: white;
+        }
+        
+        .gallery-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 20px;
+            margin-top: 30px;
+        }
+        
+        .gallery-item {
+            position: relative;
+            overflow: hidden;
+            border-radius: 8px;
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+            aspect-ratio: 1 / 1;
+            cursor: pointer;
+            transition: transform 0.3s ease;
+        }
+        
+        .gallery-item:hover {
+            transform: translateY(-5px);
+        }
+        
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+            display: block;
+        }
+        
+        .gallery-item:hover img {
+            transform: scale(1.05);
+        }
+        
+        .gallery-item .overlay {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: linear-gradient(to top, rgba(0,0,0,0.8), transparent);
+            color: white;
+            padding: 20px;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+        
+        .gallery-item:hover .overlay {
+            opacity: 1;
+        }
+        
+        .gallery-item .overlay h3 {
+            margin: 0 0 5px 0;
+            font-size: 1.2em;
+        }
+        
+        .gallery-item .overlay p {
+            margin: 0;
+            font-size: 0.9em;
+            opacity: 0.8;
+        }
+        
+        .gallery-item .location {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            background: rgba(255, 255, 255, 0.8);
+            color: #333;
+            padding: 5px 10px;
+            border-radius: 20px;
+            font-size: 0.8em;
+            z-index: 1;
+        }
+        
+        /* Lightbox styles */
+        .lightbox {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.9);
+            display: none;
+            justify-content: center;
+            align-items: center;
+            z-index: 1000;
+            padding: 30px;
+            box-sizing: border-box;
+        }
+        
+        .lightbox-content {
+            position: relative;
+            max-width: 90%;
+            max-height: 90%;
+        }
+        
+        .lightbox img {
+            max-width: 100%;
+            max-height: 80vh;
+            border: 5px solid white;
+            box-shadow: 0 5px 25px rgba(0,0,0,0.4);
+        }
+        
+        .lightbox-close {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            font-size: 30px;
+            color: white;
+            cursor: pointer;
+            z-index: 1001;
+        }
+        
+        .lightbox-caption {
+            position: absolute;
+            bottom: -50px;
+            left: 0;
+            right: 0;
+            text-align: center;
+            color: white;
+            padding: 10px;
+            background: rgba(0,0,0,0.7);
+            border-radius: 0 0 5px 5px;
+        }
+        
+        .featured-gallery {
+            position: relative;
+            height: 500px;
+            border-radius: 10px;
+            overflow: hidden;
+            margin-bottom: 30px;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+        }
+        
+        .featured-gallery img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        
+        .featured-caption {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: linear-gradient(to top, rgba(0,0,0,0.8), transparent);
+            color: white;
+            padding: 30px;
+        }
+        
+        .featured-caption h2 {
+            margin: 0 0 10px 0;
+            font-size: 2em;
+        }
+        
+        .featured-caption p {
+            margin: 0;
+            font-size: 1.1em;
+            max-width: 700px;
+        }
+        
+        .gallery-section {
+            margin: 50px 0;
+        }
+        
+        .section-title {
+            font-size: 1.8em;
+            color: #14aa52;
+            margin-bottom: 20px;
+            position: relative;
+            padding-bottom: 10px;
+        }
+        
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 50px;
+            height: 3px;
+            background-color: #14aa52;
+        }
+        
+        @media screen and (max-width: 768px) {
+            .gallery-container {
+                grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+            }
+            
+            .featured-gallery {
+                height: 300px;
+            }
+            
+            .featured-caption h2 {
+                font-size: 1.5em;
+            }
+            
+            .featured-caption p {
+                font-size: 0.9em;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="logo" style="margin-right: 100px;">SUMATERA UTARA</div>
+        <nav>
+            <a href="index.html">Beranda</a>
+            <a href="tentang.html">Tentang</a>
+            <a href="danau-toba.html">Danau Toba</a>
+            <a href="budaya.html">Budaya Batak</a>
+            <a href="kuliner.html">Kuliner</a>
+            <a href="medan.html">Kota Medan</a>
+            <a href="wisata.html">Wisata Lainnya</a>
+            <a href="festival.html">Festival</a>
+            <a href="galeri.html" class="active">Galeri</a>
+            <a href="kontak.html">Kontak</a>
+        </nav>
+    </header>
+
+    <div class="content-container">
+        <div class="featured-gallery">
+            <img src="./image/img1.jpg" alt="Danau Toba dari ketinggian">
+            <div class="featured-caption">
+                <h2>Keindahan Sumatera Utara</h2>
+                <p>Menjelajahi pesona alam, budaya, dan kuliner dari provinsi yang kaya akan keberagaman</p>
+            </div>
+        </div>
+        
+        <div class="title">GALERI FOTO</div>
+        <div class="subtitle">Kumpulan gambar yang menampilkan keindahan dan keunikan Sumatera Utara dari berbagai sudut pandang</div>
+        
+        <div class="filter-container">
+            <button class="filter-button active" data-filter="all">Semua</button>
+            <button class="filter-button" data-filter="alam">Wisata Alam</button>
+            <button class="filter-button" data-filter="budaya">Budaya & Tradisi</button>
+            <button class="filter-button" data-filter="kuliner">Kuliner</button>
+            <button class="filter-button" data-filter="kota">Perkotaan</button>
+        </div>
+        
+        <div class="gallery-section">
+            <h2 class="section-title">Destinasi Populer</h2>
+            
+            <div class="gallery-container">
+                <div class="gallery-item" data-category="alam">
+                    <span class="location">Danau Toba</span>
+                    <img src="./image/img1.jpg" alt="Danau Toba">
+                    <div class="overlay">
+                        <h3>Danau Toba</h3>
+                        <p>Danau vulkanik terbesar di Indonesia dengan keindahan alam yang memukau</p>
+                    </div>
+                </div>
+                
+                <div class="gallery-item" data-category="budaya">
+                    <span class="location">Pulau Samosir</span>
+                    <img src="./image/img2.jpg" alt="Rumah Adat Batak">
+                    <div class="overlay">
+                        <h3>Rumah Adat Batak</h3>
+                        <p>Arsitektur tradisional dengan filosofi mendalam yang mencerminkan kehidupan masyarakat Batak</p>
+                    </div>
+                </div>
+                
+                <div class="gallery-item" data-category="kota">
+                    <span class="location">Medan</span>
+                    <img src="./image/img3.jpg" alt="Istana Maimun">
+                    <div class="overlay">
+                        <h3>Istana Maimun</h3>
+                        <p>Simbol kejayaan Kesultanan Deli dengan arsitektur perpaduan Melayu, Islam, dan Eropa</p>
+                    </div>
+                </div>
+                
+                <div class="gallery-item" data-category="kuliner">
+                    <span class="location">Sumatera Utara</span>
+                    <img src="./image/img4.jpg" alt="Kuliner Khas">
+                    <div class="overlay">
+                        <h3>Kuliner Khas</h3>
+                        <p>Beragam hidangan tradisional dengan cita rasa kuat dan penggunaan rempah khas</p>
+                    </div>
+                </div>
+                
+                <div class="gallery-item" data-category="alam">
+                    <span class="location">Berastagi</span>
+                    <img src="./image/img1.jpg" alt="Gunung Sibayak">
+                    <div class="overlay">
+                        <h3>Gunung Sibayak</h3>
+                        <p>Gunung berapi aktif dengan pemandangan spektakuler dan sumber air panas alami</p>
+                    </div>
+                </div>
+                
+                <div class="gallery-item" data-category="budaya">
+                    <span class="location">Samosir</span>
+                    <img src="./image/img2.jpg" alt="Tarian Tor-tor">
+                    <div class="overlay">
+                        <h3>Tarian Tor-tor</h3>
+                        <p>Tarian tradisional Batak yang menjadi bagian penting dalam upacara adat</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="gallery-section">
+            <h2 class="section-title">Keindahan Alam</h2>
+            
+            <div class="gallery-container">
+                <div class="gallery-item" data-category="alam">
+                    <span class="location">Danau Toba</span>
+                    <img src="./image/img1.jpg" alt="Sunset di Danau Toba">
+                    <div class="overlay">
+                        <h3>Sunset di Danau Toba</h3>
+                        <p>Pemandangan matahari terbenam yang memukau dari tepi Danau Toba</p>
+                    </div>
+                </div>
+                
+                <div class="gallery-item" data-category="alam">
+                    <span class="location">Tangkahan</span>
+                    <img src="./image/img3.jpg" alt="Hutan Tangkahan">
+                    <div class="overlay">
+                        <h3>Hutan Tangkahan</h3>
+                        <p>Hutan hujan tropis yang masih asri dengan keragaman flora dan fauna</p>
+                    </div>
+                </div>
+                
+                <div class="gallery-item" data-category="alam">
+                    <span class="location">Air Terjun Sipiso-piso</span>
+                    <img src="./image/img1.jpg" alt="Air Terjun Sipiso-piso">
+                    <div class="overlay">
+                        <h3>Air Terjun Sipiso-piso</h3>
+                        <p>Air terjun setinggi 120 meter yang jatuh dari tebing tepi Danau Toba</p>
+                    </div>
+                </div>
+                
+                <div class="gallery-item" data-category="alam">
+                    <span class="location">Pulau Samosir</span>
+                    <img src="./image/img2.jpg" alt="Pemandangan Pulau Samosir">
+                    <div class="overlay">
+                        <h3>Pemandangan Pulau Samosir</h3>
+                        <p>Pulau vulkanik di tengah Danau Toba dengan panorama memukau</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="gallery-section">
+            <h2 class="section-title">Budaya & Tradisi</h2>
+            
+            <div class="gallery-container">
+                <div class="gallery-item" data-category="budaya">
+                    <span class="location">Samosir</span>
+                    <img src="./image/img2.jpg" alt="Ulos Batak">
+                    <div class="overlay">
+                        <h3>Ulos Batak</h3>
+                        <p>Kain tenun tradisional dengan motif dan makna filosofis yang dalam</p>
+                    </div>
+                </div>
+                
+                <div class="gallery-item" data-category="budaya">
+                    <span class="location">Toba</span>
+                    <img src="./image/img3.jpg" alt="Sigale-gale">
+                    <div class="overlay">
+                        <h3>Sigale-gale</h3>
+                        <p>Boneka kayu tradisional yang menari mengikuti irama musik gondang</p>
+                    </div>
+                </div>
+                
+                <div class="gallery-item" data-category="budaya">
+                    <span class="location">Karo</span>
+                    <img src="./image/img4.jpg" alt="Upacara Adat">
+                    <div class="overlay">
+                        <h3>Upacara Adat</h3>
+                        <p>Salah satu upacara tradisional yang masih dilestarikan hingga kini</p>
+                    </div>
+                </div>
+                
+                <div class="gallery-item" data-category="budaya">
+                    <span class="location">Sumatera Utara</span>
+                    <img src="./image/img2.jpg" alt="Alat Musik Gondang">
+                    <div class="overlay">
+                        <h3>Alat Musik Gondang</h3>
+                        <p>Seperangkat alat musik tradisional yang menjadi bagian penting dalam upacara adat</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="gallery-section">
+            <h2 class="section-title">Kuliner & Kehidupan</h2>
+            
+            <div class="gallery-container">
+                <div class="gallery-item" data-category="kuliner">
+                    <span class="location">Medan</span>
+                    <img src="./image/img4.jpg" alt="Soto Medan">
+                    <div class="overlay">
+                        <h3>Soto Medan</h3>
+                        <p>Hidangan kuah santan dengan rempah khas dan pelengkap beragam</p>
+                    </div>
+                </div>
+                
+                <div class="gallery-item" data-category="kuliner">
+                    <span class="location">Tanah Karo</span>
+                    <img src="./image/img4.jpg" alt="Babi Panggang Karo">
+                    <div class="overlay">
+                        <h3>Babi Panggang Karo</h3>
+                        <p>Hidangan daging babi panggang dengan bumbu khas suku Karo</p>
+                    </div>
+                </div>
+                
+                <div class="gallery-item" data-category="kota">
+                    <span class="location">Medan</span>
+                    <img src="./image/img3.jpg" alt="Kesawan Square">
+                    <div class="overlay">
+                        <h3>Kesawan Square</h3>
+                        <p>Kawasan bersejarah dengan bangunan kolonial yang menjadi pusat wisata kuliner</p>
+                    </div>
+                </div>
+                
+                <div class="gallery-item" data-category="kota">
+                    <span class="location">Parapat</span>
+                    <img src="./image/img1.jpg" alt="Tepi Danau Toba">
+                    <div class="overlay">
+                        <h3>Tepi Danau Toba</h3>
+                        <p>Kehidupan masyarakat di tepi Danau Toba dengan latar belakang alam yang indah</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Lightbox -->
+    <div class="lightbox">
+        <span class="lightbox-close">&times;</span>
+        <div class="lightbox-content">
+            <img src="" alt="">
+            <div class="lightbox-caption"></div>
+        </div>
+    </div>
+
+    <script>
+        // Simple gallery filter functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            // Filter buttons
+            const filterButtons = document.querySelectorAll('.filter-button');
+            const galleryItems = document.querySelectorAll('.gallery-item');
+            
+            filterButtons.forEach(button => {
+                button.addEventListener('click', function() {
+                    // Remove active class from all buttons
+                    filterButtons.forEach(btn => btn.classList.remove('active'));
+                    // Add active class to clicked button
+                    this.classList.add('active');
+                    
+                    const filterValue = this.getAttribute('data-filter');
+                    
+                    galleryItems.forEach(item => {
+                        if (filterValue === 'all' || item.getAttribute('data-category') === filterValue) {
+                            item.style.display = 'block';
+                        } else {
+                            item.style.display = 'none';
+                        }
+                    });
+                });
+            });
+            
+            // Lightbox functionality
+            const lightbox = document.querySelector('.lightbox');
+            const lightboxImg = lightbox.querySelector('img');
+            const lightboxCaption = lightbox.querySelector('.lightbox-caption');
+            const lightboxClose = lightbox.querySelector('.lightbox-close');
+            
+            galleryItems.forEach(item => {
+                item.addEventListener('click', function() {
+                    const imgSrc = this.querySelector('img').src;
+                    const imgAlt = this.querySelector('img').alt;
+                    const caption = this.querySelector('.overlay h3').textContent;
+                    
+                    lightboxImg.src = imgSrc;
+                    lightboxImg.alt = imgAlt;
+                    lightboxCaption.textContent = caption;
+                    
+                    lightbox.style.display = 'flex';
+                });
+            });
+            
+            lightboxClose.addEventListener('click', function() {
+                lightbox.style.display = 'none';
+            });
+            
+            lightbox.addEventListener('click', function(e) {
+                if (e.target === lightbox) {
+                    lightbox.style.display = 'none';
+                }
+            });
+        });
+    </script>
+</body>
+</html> 
