@@ -3,6 +3,9 @@
 ## Overview
 This project is a responsive multi-page website showcasing North Sumatra (Sumatera Utara), Indonesia. It was built as a UI practice exercise to demonstrate front-end development skills using HTML, CSS, and JavaScript.
 
+## Live Demo
+View the live website at: [https://steveharianto.github.io/North-Sumatra-Website/](https://steveharianto.github.io/North-Sumatra-Website/)
+
 ## Features
 - **Interactive Image Slider**: Custom-built image carousel on the homepage with smooth animations and thumbnail navigation
 - **Responsive Design**: Fully responsive layout that works on mobile, tablet, and desktop devices
@@ -27,8 +30,7 @@ This project is a responsive multi-page website showcasing North Sumatra (Sumate
 - Google Fonts (Poppins)
 
 ## Project Structure
-```
-├── index.html              # Homepage with image slider
+```├── index.html              # Homepage with image slider
 ├── tentang.html            # About North Sumatra page
 ├── danau-toba.html         # Lake Toba information page
 ├── budaya.html             # Batak culture page
@@ -69,6 +71,9 @@ This project helped me practice:
 2. Open `index.html` in your web browser
 3. Navigate between pages using the navigation menu
 
+## Deployment
+This project is deployed using GitHub Pages at [https://steveharianto.github.io/North-Sumatra-Website/](https://steveharianto.github.io/North-Sumatra-Website/)
+
 ## Future Improvements
 - Add more interactive elements
 - Implement a dark/light mode toggle
@@ -78,4 +83,5 @@ This project helped me practice:
 
 ## License
 This project is created for educational purposes as a UI practice exercise.
+
 
